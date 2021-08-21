@@ -1,14 +1,16 @@
 'use strict';
 
-const firebase = require('/../db');
+const firebase = require('./../db');
 const User = require('../models/user');
 const firestore = firebase.firestore();
 
 const addUser = async (req, res, next) => {
     try {
         const data = req.body;
+
+        console.log('salve')
         await firestore.collection('users').doc().set(data);
-        res.send('Record Saved Sucessfuly');
+        res.status(200).send('Record Saved Sucessfuly');
     } catch (error) {
         res.status(400).send(error.message);
     }

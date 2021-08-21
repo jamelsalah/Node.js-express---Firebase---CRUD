@@ -1,5 +1,5 @@
 const express = require('express');
-const {addUser, getAllUsers} = require ('../controllers/studentsController');
+const {addUser, getAllUsers} = require ('../controllers/UserController');
 
 const router = express.Router();
 
@@ -8,4 +8,4 @@ router.post('/user', addUser);
 
 module.exports = {
     routes: router
-}
+};
